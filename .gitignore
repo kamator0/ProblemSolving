@@ -3,3 +3,5 @@ build/
 .vscode/
 *.txt
 *.exe
+*.DS_Store
+
