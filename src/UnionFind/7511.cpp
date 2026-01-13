@@ -28,8 +28,6 @@ void initialize(int n)
     }
 }
 
-
-
 int find(int x)
 {
     if(p[x] <0)

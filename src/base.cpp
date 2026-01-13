@@ -13,6 +13,8 @@
 #include <numeric>
 #include <limits>
 
+#define INF 12345678
+
 using namespace std;
 
 int main(){
