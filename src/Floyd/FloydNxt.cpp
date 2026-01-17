@@ -19,6 +19,7 @@ using namespace std;
 
 int n,  m ; 
 int graph [102][102];
+int nxt[102][102];
 
 void solution()
 {
@@ -32,7 +33,13 @@ void solution()
             {
                 if(j==k)
                     continue;
-                graph[j][k] = min(graph[j][k],graph[j][i] + graph[i][k]);
+                if(graph[j][k] > graph[j][i] + graph[i][k])
+                {
+                    graph[j][k]  = (graph[j][i] + graph[i][k]);
+                    nxt [j][k] = nxt[j][i] ; 
+                }
+                //    graph[j][k] = min(graph[j][k],graph[j][i] + graph[i][k]);
+                
             }
         }
     }
@@ -50,7 +57,7 @@ int main(){
     {
         for(int j = 1;  j <=n; j++)
         {
-            if(j==i)
+            if(i==j)
                 continue;
             graph[i][j] = INF;
         }
@@ -65,7 +72,13 @@ int main(){
     {
         int a,b ,c ;
         cin >> a >> b >> c ;
-        graph[a][b] = min(graph[a][b],c);
+        if (graph[a][b] > c)
+        {
+            graph[a][b] = c; 
+            nxt [a][b] = b; 
+        }
+      
+        
     }
 
     // for(int i = 1 ; i<=n ; i++)
@@ -91,6 +104,15 @@ int main(){
             }
 
             cout << graph[i][j] <<" ";
+        }
+        cout <<"\n";
+    }
+    for(int i = 1 ; i<=n ; i++)
+    {
+        for(int j = 1;  j <=n; j++)
+        {
+        
+            cout << nxt[i][j] <<" ";
         }
         cout <<"\n";
     }
