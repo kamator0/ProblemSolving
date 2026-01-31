@@ -89,7 +89,7 @@ int main(){
                 cout << 0 <<" ";
                 continue;
             }
-
+            
             cout << graph[i][j] <<" ";
         }
         cout <<"\n";
