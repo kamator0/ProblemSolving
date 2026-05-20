@@ -20,10 +20,27 @@
 
 using namespace std;
 
+long long r, g, b ;
+vector<long long> v;
+
 int main(){
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    
+    cin >> r >> g >> b ;
+    v.push_back(r);
+    v.push_back(g);
+    v.push_back(b);
+
+    sort(v.begin(),v.end());
+
+    if(v[2] >= 2*(v[1]+v[0]))
+    {
+        cout << v[1] + v[0] <<"\n";
+    }
+    else{
+        cout << (v[2] +v[1]+v[0])/3 <<"\n";
+    }
+
 }
 

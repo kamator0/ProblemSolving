@@ -13,10 +13,9 @@
 #include <numeric>
 #include <limits>
 #include <sstream>
-#include <iomanip> 
 
 #define INF 0x3f3f3f3f // 경우에 따라 다르게
-// long long 일 1e18
+// long long 일
 
 using namespace std;
 
